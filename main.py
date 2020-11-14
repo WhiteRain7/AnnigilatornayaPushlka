@@ -184,7 +184,7 @@ for i in range(0,len(Stat)):
 print("Десять самых приоритетных:")
 new_massiv.sort(key=lambda item: -item[6]) 
 for i in range(0, len(new_massiv)):
-	print(i+1,new_massiv[i][0][0],'[',new_massiv[i][6],']')
+	print(i+1,new_massiv[i][0][0],'[',int(new_massiv[i][6]),']')
 	if (i==9):
 		print("Остальные профессии:")
 	if (i==len(new_massiv)-6):
