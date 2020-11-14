@@ -138,13 +138,13 @@ for a in Pr:
         Stat.append([str(a),Mnt[6],Mnt[5],Mnt[4],Mnt[3],Mnt[2],Mnt[1],Mnt[0]])
         Mnt[0] = Mnt[1] = Mnt[2] = Mnt[3] = Mnt[4] = Mnt[5] = Mnt[6] = 0
 
-print(Stat)
+#print(Stat)
 
 # Здесь начинается Франкенштейн
 
 new_massiv = []
 for i in range(0,len(Stat)):
-    print(Stat[i][0])
+    #print(Stat[i][0])
     #print(mass_hh[i])
     #print(mass_thyt[i])
     new_massiv.append([[Stat[i][0]], [], [0,0,0], 0, mass_hh[i], mass_thyt[i], 0])
@@ -152,7 +152,7 @@ for i in range(0,len(Stat)):
     for j in range(0,count-2):
         zn = (Stat[i][j+1] + Stat[i][j+2] + Stat[i][j+3]) // 3
         new_massiv[i][1].append(zn)
-        print(2016+j, ":" ,new_massiv[i][1][j])
+        #print(2016+j, ":" ,new_massiv[i][1][j])
         new_massiv[i][3] += Stat[i][j+1]
     new_massiv[i][3] += Stat[i][count-2]
     new_massiv[i][3] += Stat[i][count-1]
@@ -171,15 +171,15 @@ for i in range(0,len(Stat)):
         #  xy = xy + (j - X) * (y - Y)
     b = xy / (xxcp * xxcp)
     a = Y - b * X
-    print(a, b)
-    print("/// прогнозы")
+    #print(a, b)
+    #print("/// прогнозы")
     new_massiv[i][2][0] = (a + b * (new_count+1))
     new_massiv[i][2][1] = (a + b * (new_count+2))
     new_massiv[i][2][2] = (a + b * (new_count+3))
-    print("2021 :", int (a + b * (new_count+1)) //1)
-    print("2022 :", int (a + b * (new_count+2)) //1)
-    print("2023 :", int (a + b * (new_count+3)) //1)
-    print()
+    #print("2021 :", int (a + b * (new_count+1)) //1)
+    #print("2022 :", int (a + b * (new_count+2)) //1)
+    #print("2023 :", int (a + b * (new_count+3)) //1)
+    #print()
     new_massiv[i][6] = new_massiv[i][2][0]+new_massiv[i][2][1]+new_massiv[i][2][2] + new_massiv[i][3] + new_massiv[i][4]/100 + new_massiv[i][5]/1000000
 print("Десять самых приоритетных:")
 new_massiv.sort(key=lambda item: -item[6]) 
